@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const PORT = 3000;
+const PORT = 8000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
         socket.emit('message', { message: '[0,0111001001001010111010010010]' });
         socket.emit('message', { message: '[2,01001010101010]' });
         socket.emit('message', { message: '[4,0100001010100101010010]' });
-      }, 5000);
+      }, 4000);
   console.log('A user connected');
 
   socket.on('message', (message) => {
